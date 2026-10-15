@@ -1,11 +1,11 @@
 # Select base image from https://hub.docker.com/
-FROM python:3.8.2-slim-buster
+FROM python:3.11-slim
 
 # Copy requirements first to leverage Docker caching
 COPY ./requirements.txt /project/requirements.txt
 
 # Set working directory for RUN, CMD, ENTRYPOINT, COPY, and ADD commands
-WORKDIR /project
+WORKDIR /project                                                                                                                            
 
 # Install pip packages
 RUN pip install -r requirements.txt
